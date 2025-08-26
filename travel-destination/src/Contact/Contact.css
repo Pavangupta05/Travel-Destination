@@ -80,6 +80,22 @@
 .contactPage-icon {
   font-size: 1.5rem;
   margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 50%;
+  color: #ff9800;
+  flex-shrink: 0;
+}
+
+.contactPage-icon i {
+  font-size: 1.5rem;
+  line-height: 1;
+  width: auto;
+  height: auto;
 }
 
 .contactPage-info-item h4 {
