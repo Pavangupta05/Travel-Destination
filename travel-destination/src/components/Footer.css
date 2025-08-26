@@ -83,15 +83,36 @@
     font-size: 13px;
 }
 /* Social icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
 .social-icons a {
   color: white;
-  margin-right: 12px;
-  font-size: 18px;
-  transition: color 0.3s ease;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #77acac;
+  color: white;
+  background: #ff9800;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+.social-icons a i {
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* Bottom footer */
