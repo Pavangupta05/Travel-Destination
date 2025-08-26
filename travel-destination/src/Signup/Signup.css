@@ -261,15 +261,23 @@
   color: #ff9800;
   cursor: pointer;
   transition: 0.3s;
-  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   border: 1px solid #e0e0e0;
+  background: rgba(255, 152, 0, 0.1);
+  line-height: 1;
 }
 
 .social-icons i:hover {
-  color: #e68900;
-  background: #f8f9fa;
+  color: white;
+  background: #ff9800;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+  border-color: #ff9800;
 }
 
 /* Login link */
