@@ -156,10 +156,21 @@
   color: #2a5298;
   cursor: pointer;
   transition: 0.3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(42, 82, 152, 0.1);
+  line-height: 1;
 }
 
 .social-icons i:hover {
-  color: #1e3c72;
+  color: white;
+  background: #2a5298;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(42, 82, 152, 0.3);
 }
 
 /* Signup link for modal */
