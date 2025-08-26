@@ -1,0 +1,54 @@
+/* Global base styles and responsive helpers */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography */
+:root {
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --step-2: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+}
+
+body {
+  font-family: Inter, Cinzel, sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+
+.container {
+  width: min(1200px, 92vw);
+  margin-inline: auto;
+}
+
+/* Utility classes */
+.hidden-sm {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+
