@@ -210,5 +210,3 @@ const ExploreNow = () => {
 };
 
 export default ExploreNow;
-
-

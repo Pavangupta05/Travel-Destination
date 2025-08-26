@@ -59,6 +59,18 @@
 .explore-search .search-icon {
   color: #2a5298;
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+}
+
+.explore-search .search-icon i {
+  font-size: 18px;
+  line-height: 1;
+  width: auto;
+  height: auto;
 }
 
 .explore-search input {
