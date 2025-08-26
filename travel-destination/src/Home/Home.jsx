@@ -13,6 +13,54 @@ import image7 from "../assets/Rome.jpg";
 import memories from "../assets/memories.jpg";
 import Footer from "../components/Footer";
 
+// Image component with error handling
+const SafeImage = ({ src, alt, className, fallbackText, fallbackStyle }) => {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleError = () => {
+    setImageError(true);
+  };
+
+  const handleLoad = () => {
+    setImageLoaded(true);
+  };
+
+  if (imageError) {
+    return (
+      <div 
+        className={`image-fallback ${className}`} 
+        style={{
+          ...fallbackStyle,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'linear-gradient(135deg, #ff9800, #f57c00)',
+          color: 'white',
+          fontSize: '1.2rem',
+          fontWeight: 'bold'
+        }}
+      >
+        {fallbackText || alt}
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt} 
+      className={className}
+      onError={handleError}
+      onLoad={handleLoad}
+      style={{ 
+        opacity: imageLoaded ? 1 : 0.7,
+        transition: 'opacity 0.3s ease'
+      }}
+    />
+  );
+};
+
 function Home() {
   const navigate = useNavigate();
   // Destination slider data
@@ -208,11 +256,11 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <video autoPlay loop muted playsInline className="hero-video">
-          <source src= {video} type="video/mp4" />
+          <source src={video} type="video/mp4" />
         </video>
         <div className="hero-content">
           <h1>Welcome to GlobeVista</h1>
-          <p>“At Globevista, we open windows to the world — helping you explore breathtaking destinations, discover cultures, and create unforgettable journeys that last a lifetime.”</p>
+          <p>"At Globevista, we open windows to the world — helping you explore breathtaking destinations, discover cultures, and create unforgettable journeys that last a lifetime."</p>
           <button onClick={() => navigate("/explore")}>Explore Now</button>
         </div>
       </section>
@@ -242,7 +290,12 @@ function Home() {
                   onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/explore?q=${encodeURIComponent(dest.city)}`); }}
                 >
                   <div className="card-image">
-                    <img src={dest.image} alt={dest.city} />
+                    <SafeImage 
+                      src={dest.image} 
+                      alt={dest.city} 
+                      fallbackText={dest.city}
+                      fallbackStyle={{ width: '100%', height: '100%' }}
+                    />
                     <div className="card-overlay">
                       <Link className="explore-btn" to={`/explore?q=${encodeURIComponent(dest.city)}`}>Explore Now</Link>
                     </div>
@@ -307,7 +360,12 @@ function Home() {
                   onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/explore?q=${encodeURIComponent(dest.title)}`); }}
                 >
                   <div className="card-image">
-                    <img src={dest.image} alt={dest.title} />
+                    <SafeImage 
+                      src={dest.image} 
+                      alt={dest.title} 
+                      fallbackText={dest.title}
+                      fallbackStyle={{ width: '100%', height: '100%' }}
+                    />
                     <span className="price">{dest.price}</span>
                     <div className="card-overlay">
                       <Link className="book-btn" to={`/explore?q=${encodeURIComponent(dest.title)}`}>Book Now</Link>
@@ -347,7 +405,7 @@ function Home() {
         <div className="story-text">
           <h2>Sweet Memories Come To Life Again</h2>
           <p>
-            Relive the joy of your journeys with Globevista, where every destination is more than a place — it’s a story waiting to be retold and a memory ready to be made again.
+            Relive the joy of your journeys with Globevista, where every destination is more than a place — it's a story waiting to be retold and a memory ready to be made again.
           </p>
           <p>
             From the golden sunsets on distant shores to the laughter shared on winding streets, we bring back the essence of travel — moments that turn into sweet memories you'll cherish forever.
@@ -355,7 +413,12 @@ function Home() {
           <button className="read-btn">Read More</button>
         </div>
         <div className="story-image">
-          <img src={memories} alt="Travel Memories" />
+          <SafeImage 
+            src={memories} 
+            alt="Travel Memories" 
+            fallbackText="Travel Memories"
+            fallbackStyle={{ width: '100%', height: '300px', borderRadius: '12px' }}
+          />
         </div>
       </section>
 
