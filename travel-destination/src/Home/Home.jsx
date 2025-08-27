@@ -297,7 +297,7 @@ function Home() {
                       fallbackStyle={{ width: '100%', height: '100%' }}
                     />
                     <div className="card-overlay">
-                      <Link className="explore-btn" to={`/explore?q=${encodeURIComponent(dest.city)}`}>Explore Now</Link>
+                      <Link className="explore-btn" to={`/booking?dest=${encodeURIComponent(dest.city)}`}>Book Now</Link>
                     </div>
                     <div className="card-gradient"></div>
                   </div>

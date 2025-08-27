@@ -175,7 +175,7 @@ const ExploreNow = () => {
                 <div className="explore-card-body">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <button className="view-btn" type="button">View More</button>
+                  <button className="view-btn" type="button" onClick={() => navigate(`/booking?dest=${encodeURIComponent(item.title)}`)}>Book Now</button>
                 </div>
               </article>
             );})}
