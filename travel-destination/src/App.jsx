@@ -9,6 +9,8 @@ import Login from "./Login/Login";
 import ForgotPassword from "./Forgotpassword/ForgotPassword";
 import Signup from "./Signup/Signup";
 import ExploreNow from "./Explorenow/Explorenow";
+import Booking from "./Booking/Booking";
+import BookingConfirmation from "./Booking/BookingConfirmation";
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -65,6 +67,8 @@ function App() {
          <Route path="/about" element={<About />} /> 
         <Route path="/contact" element={<Contact />} />
         <Route path="/explore" element={<ExploreNow />} />
+        <Route path="/booking" element={<Booking />} />
+        <Route path="/booking/confirmation" element={<BookingConfirmation />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/signup" element={<Signup />} /> 
