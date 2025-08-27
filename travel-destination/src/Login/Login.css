@@ -100,6 +100,19 @@
   font-size: 14px;
 }
 
+/* Tweak Remember Me checkbox size */
+.options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.options label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2a5298;
+}
+
 .options a {
   color: #2a5298;
   text-decoration: none;
