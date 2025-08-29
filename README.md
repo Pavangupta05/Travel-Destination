@@ -36,17 +36,17 @@ git clone https://github.com/your-username/globevista.git
 cd globevista
 2. Install Dependencies
 bash
-Copy code
+
 npm install
 3. Start Development Server
 bash
-Copy code
+
 npm run dev
 4. Open in Browser
 Navigate to:
 
 arduino
-Copy code
+
 http://localhost:5173
 📸 Screenshots
 🔹 Hero Section
@@ -65,7 +65,7 @@ http://localhost:5173
 🤖 AI-powered Travel Recommendation System
 
 🧑‍💻 Author
-Pavan Kumar
+Pavan Kumar Gupta
 
 🌐 Portfolio Website (add link if you have one)
 
