@@ -188,17 +188,42 @@ function About() {
         </p>
 
         <div className="team-container">
-          {[member1, member2, member3, member4].map((member, index) => (
-            <div className="team-member" key={index}>
-              <img src={member} alt={`team-${index}`} />
-              <h4>CEO, Co-Founder</h4>
-              <h3>Member {index + 1}</h3>
-              <p>
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts.
-              </p>
-            </div>
-          ))}
+          <div className="team-member">
+            <img src={member1} alt="team-1" />
+            <h4>CEO, Co‑Founder</h4>
+            <h3>Member 1</h3>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+          <div className="team-member">
+            <img src={member2} alt="team-2" />
+            <h4>CTO</h4>
+            <h3>Member 2</h3>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+          <div className="team-member">
+            <img src={member3} alt="team-3" />
+            <h4>Head of Operations</h4>
+            <h3>Member 3</h3>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
+          <div className="team-member">
+            <img src={member4} alt="team-4" />
+            <h4>Lead Guide</h4>
+            <h3>Member 4</h3>
+            <p>
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+          </div>
         </div>
       </section>
 <section className="timeline-section reveal">

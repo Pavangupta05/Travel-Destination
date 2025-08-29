@@ -28,8 +28,8 @@ const SafeImage = ({ src, alt, className, fallbackText, fallbackStyle }) => {
 
   if (imageError) {
     return (
-      <div 
-        className={`image-fallback ${className}`} 
+      <div
+        className={`image-fallback ${className}`}
         style={{
           ...fallbackStyle,
           display: 'flex',
@@ -47,13 +47,13 @@ const SafeImage = ({ src, alt, className, fallbackText, fallbackStyle }) => {
   }
 
   return (
-    <img 
-      src={src} 
-      alt={alt} 
+    <img
+      src={src}
+      alt={alt}
       className={className}
       onError={handleError}
       onLoad={handleLoad}
-      style={{ 
+      style={{
         opacity: imageLoaded ? 1 : 0.7,
         transition: 'opacity 0.3s ease'
       }}
@@ -271,12 +271,12 @@ function Home() {
         <div className="destination-slider-container">
           <button className="slider-btn left" onClick={prevDestination} disabled={isTransitioning}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-          
+
           <div className="destination-slider">
-            <div 
+            <div
               className={`destination-slide ${isTransitioning ? 'transitioning' : ''}`}
               style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
             >
@@ -290,9 +290,9 @@ function Home() {
                   onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/explore?q=${encodeURIComponent(dest.city)}`); }}
                 >
                   <div className="card-image">
-                    <SafeImage 
-                      src={dest.image} 
-                      alt={dest.city} 
+                    <SafeImage
+                      src={dest.image}
+                      alt={dest.city}
                       fallbackText={dest.city}
                       fallbackStyle={{ width: '100%', height: '100%' }}
                     />
@@ -312,7 +312,7 @@ function Home() {
 
           <button className="slider-btn right" onClick={nextDestination} disabled={isTransitioning}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -341,12 +341,12 @@ function Home() {
         <div className="travel-slider-container">
           <button className="travel-slider-btn left" onClick={prevTravel} disabled={isTravelTransitioning}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
 
           <div className="travel-slider">
-            <div 
+            <div
               className={`travel-slide ${isTravelTransitioning ? 'transitioning' : ''}`}
               style={{ transform: `translateX(-${travelIndex * 33.333}%)` }}
             >
@@ -360,9 +360,9 @@ function Home() {
                   onKeyDown={(e) => { if (e.key === 'Enter') navigate(`/explore?q=${encodeURIComponent(dest.title)}`); }}
                 >
                   <div className="card-image">
-                    <SafeImage 
-                      src={dest.image} 
-                      alt={dest.title} 
+                    <SafeImage
+                      src={dest.image}
+                      alt={dest.title}
                       fallbackText={dest.title}
                       fallbackStyle={{ width: '100%', height: '100%' }}
                     />
@@ -383,7 +383,7 @@ function Home() {
 
           <button className="travel-slider-btn right" onClick={nextTravel} disabled={isTravelTransitioning}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -413,9 +413,9 @@ function Home() {
           <button className="read-btn">Read More</button>
         </div>
         <div className="story-image">
-          <SafeImage 
-            src={memories} 
-            alt="Travel Memories" 
+          <SafeImage
+            src={memories}
+            alt="Travel Memories"
             fallbackText="Travel Memories"
             fallbackStyle={{ width: '100%', height: '300px', borderRadius: '12px' }}
           />
