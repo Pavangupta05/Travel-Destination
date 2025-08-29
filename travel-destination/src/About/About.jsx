@@ -183,18 +183,16 @@ function About() {
       <section className="team-section reveal">
         <h2 className="team-title">Meet Our Team of Experts</h2>
         <p className="team-subtitle">
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the blind texts.
+          "Passionate about exploring hidden gems and curating unforgettable experiences, They ensures every journey feels personal and memorable."
         </p>
 
         <div className="team-container">
           <div className="team-member">
             <img src={member1} alt="team-1" />
             <h4>CEO, Co‑Founder</h4>
-            <h3>Member 1</h3>
+            <h3>Pavan Kumar Gupta</h3>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              "With a love for connecting people to new cultures, Pavan's specializes in planning smooth, exciting, and stress-free travel adventures."
             </p>
           </div>
           <div className="team-member">
@@ -202,8 +200,7 @@ function About() {
             <h4>CTO</h4>
             <h3>Member 2</h3>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              "From breathtaking itineraries to customer support, She brings creativity and care to make your travel dreams come true."
             </p>
           </div>
           <div className="team-member">
@@ -211,8 +208,7 @@ function About() {
             <h4>Head of Operations</h4>
             <h3>Member 3</h3>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              "An avid traveler and storyteller, He brings destinations to life with insights, tips, and unique experiences."
             </p>
           </div>
           <div className="team-member">
@@ -220,8 +216,7 @@ function About() {
             <h4>Lead Guide</h4>
             <h3>Member 4</h3>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              "Focused on details that matter, She makes sure every destination is more than just a place—it becomes a memory."
             </p>
           </div>
         </div>
