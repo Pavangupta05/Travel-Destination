@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Home.css";
-import video from "../assets/video1.mp4";
+import heroImage from "../assets/heroimag.avif";
 import image1 from "../assets/malasia.jpg";
 import image2 from "../assets/paris.jpg";
 import image3 from "../assets/sanfransisco.jpg";
@@ -255,9 +255,7 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <video autoPlay loop muted playsInline className="hero-video">
-          <source src={video} type="video/mp4" />
-        </video>
+        <img src={heroImage} alt="Hero background" className="hero-video" />
         <div className="hero-content">
           <h1>Welcome to GlobeVista</h1>
           <p>"At Globevista, we open windows to the world — helping you explore breathtaking destinations, discover cultures, and create unforgettable journeys that last a lifetime."</p>

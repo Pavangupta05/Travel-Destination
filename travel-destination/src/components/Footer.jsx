@@ -53,10 +53,10 @@ function Footer() {
 
         <div className="footer-column">
           <h3>Contact</h3>
-          <p>43 Raymouth Rd. Baltimore, London 3910</p>
-          <li type="none"><a href="#"><p>+1(123)-456-7890</p></a></li>
-            <li type="none"><a href="#"><p>+1(123)-456-7890</p></a></li>
-            <li type="none"><a href="#"><p>info@mydomain.com</p></a></li>
+          <p>IndiaGate , Sitapura, Jaipur , Rajasthan(302022)</p>
+          <li type="none"><a href="#"><p>+91 8005872338</p></a></li>
+            <li type="none"><a href="#"><p>+91 800586598</p></a></li>
+            <li type="none"><a href="#"><p>pavangupta150605@gmail.com</p></a></li>
         </div>
       </div>
 
