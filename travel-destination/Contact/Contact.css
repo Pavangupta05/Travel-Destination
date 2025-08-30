@@ -1,0 +1,176 @@
+/*Contact Page Hero Section */
+.contactPage-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-family: Inter, Cinzel, sans-serif;
+}
+
+.contactPage-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+}
+
+.contactPage-hero-content {
+  position: relative;
+  max-width: 800px;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.contactPage-hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contactPage-hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   Contact Info + Form Section
+================================ */
+.contactPage-section {
+  padding: 80px 20px;
+  background: #f8f9fa;
+}
+
+.contactPage-overlay {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contactPage-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+
+/* ================================
+   Left Side Info
+================================ */
+.contactPage-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contactPage-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contactPage-info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contactPage-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 50%;
+  color: #ff9800;
+  flex-shrink: 0;
+}
+
+.contactPage-icon i {
+  font-size: 1.5rem;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+.contactPage-info-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.contactPage-info-item p {
+  color: #555;
+}
+
+
+/* ================================
+   Right Side Form
+================================ */
+.contactPage-form {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.contactPage-form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contactPage-form-row input {
+  flex: 1;
+}
+
+.contactPage-form input,
+.contactPage-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contactPage-form input:focus,
+.contactPage-form textarea:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.contactPage-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #e96800;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactPage-btn:hover {
+  background: #ff6800;
+}
+
+
+/* == Responsive == */
+@media (max-width: 768px) {
+  .contactPage-container {
+    flex-direction: column;
+  }
+
+  .contactPage-form-row {
+    flex-direction: column;
+  }
+}
