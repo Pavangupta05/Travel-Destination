@@ -6,6 +6,9 @@ function Login({ onSwitchToSignup, onSwitchToForgotPassword }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -20,14 +23,38 @@ function Login({ onSwitchToSignup, onSwitchToForgotPassword }) {
     }
   }, []);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+    setSuccess("");
+
     if (rememberMe && email) {
       localStorage.setItem("rememberedEmail", email);
     } else {
       localStorage.removeItem("rememberedEmail");
     }
-    // proceed with actual auth flow here
+
+    try {
+      setLoading(true);
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      if (data && data.status === "ok" && data.token) {
+        localStorage.setItem("authToken", data.token);
+        setSuccess("Logged in successfully.");
+        setError("");
+      } else {
+        setError(data?.error || "Login failed");
+        setSuccess("");
+      }
+    } catch (err) {
+      setError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -80,7 +107,11 @@ function Login({ onSwitchToSignup, onSwitchToForgotPassword }) {
         <a href="#" onClick={(e) => { e.preventDefault(); onSwitchToForgotPassword(); }}>Forgot Password?</a>
       </div>
 
-      <button className="login-btn" onClick={handleLogin}>Login</button>
+      {error && <div className="error" role="alert">{error}</div>}
+      {success && <div className="success-message" role="status">{success}</div>}
+      <button className="login-btn" onClick={handleLogin} disabled={loading}>
+        {loading ? "Logging in..." : "Login"}
+      </button>
 
       <div className="social-login">
         <p>Or Login with</p>

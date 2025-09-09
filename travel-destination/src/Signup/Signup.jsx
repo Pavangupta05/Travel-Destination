@@ -178,13 +178,25 @@ function Signup({ onSwitchToLogin }) {
     setSuccessMessage("");
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Here you would typically make an API call to register the user
-      console.log("Form submitted:", formData);
-      
-      setSuccessMessage("Account created successfully! Please check your email to verify your account.");
+      const payload = {
+        name: `${formData.firstName} ${formData.lastName}`.trim(),
+        email: formData.email,
+        password: formData.password,
+      };
+
+      const res = await fetch("/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+
+      if (data && data.status === "ok") {
+        setSuccessMessage("Account created successfully!");
+      } else {
+        setErrors({ submit: data?.error || "Registration failed" });
+        return;
+      }
       
       // Reset form after successful submission
       setFormData({
@@ -203,7 +215,7 @@ function Signup({ onSwitchToLogin }) {
       setPasswordStrength({ score: 0, text: "", color: "" });
       
     } catch (error) {
-      setErrors({ submit: "An error occurred. Please try again." });
+      setErrors({ submit: "Network error. Please try again." });
     } finally {
       setIsSubmitting(false);
     }

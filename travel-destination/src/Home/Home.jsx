@@ -2,15 +2,15 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Home.css";
-import heroImage from "../assets/heroimag.avif";
-import image1 from "../assets/malasia.jpg";
-import image2 from "../assets/paris.jpg";
-import image3 from "../assets/sanfransisco.jpg";
-import image4 from "../assets/switzerland.jpg";
-import image5 from "../assets/italy.jpg";
-import image6 from "../assets/India.jpg";
-import image7 from "../assets/Rome.jpg";
-import memories from "../assets/memories.jpg";
+import heroImage from "/src/assets/heroimag.avif";
+import image1 from "/src/assets/malasia.jpg";
+import image2 from "/src/assets/paris.jpg";
+import image3 from "/src/assets/sanfransisco.jpg";
+import image4 from "/src/assets/switzerland.jpg";
+import image5 from "/src/assets/italy.jpg";
+import image6 from "/src/assets/India.jpg";
+import image7 from "/src/assets/Rome.jpg";
+import memories from "/src/assets/memories.jpg";
 import Footer from "../components/Footer";
 
 // Image component with error handling
@@ -255,7 +255,7 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <img src={heroImage} alt="Hero background" className="hero-video" />
+        <img src={heroImage} alt="Hero" className="hero-video" />
         <div className="hero-content">
           <h1>Welcome to GlobeVista</h1>
           <p>"At Globevista, we open windows to the world — helping you explore breathtaking destinations, discover cultures, and create unforgettable journeys that last a lifetime."</p>
